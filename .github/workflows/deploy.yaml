@@ -1,6 +1,10 @@
 name: Build and Deploy
 
-on: [push]
+on: 
+  # push:
+  #   branches:
+  #     - main
+  workflow_dispatch:
 
 jobs:
   build:
@@ -40,7 +44,7 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           source: "deploy/*"
-          target: "/root/ldap/standalone"
+          target: "${{ secrets.PATH }}/standalone"
           strip_components: 1
 
       - name: Restart container
@@ -51,6 +55,6 @@ jobs:
           key: ${{ secrets.KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd /root/ldap
+            cd ${{ secrets.PATH }}
             git pull
             docker compose restart

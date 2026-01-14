@@ -100,4 +100,20 @@ LINUX_DO_GROUP_ID=your_group_id # 版主所在的组 ID
 
 ## 部署
 
-直接 Vercel.com
+直接 Vercel.com 导入部署一把梭
+
+在部署页面的 Environment Variables 栏目中，按照 `.env.example` 的要求，逐一添加变量。
+
+### 服务器
+
+依赖于 Docker 和 Docker Compose，部署步骤如下：
+
+1. Fork 本仓库
+2. 在 Action Secrets 中配置服务器相关环境变量
+   - `HOST`: 服务器地址
+   - `PORT`: SSH 端口
+   - `USERNAME`: 登录用户名
+   - `PATH`: 代码存放路径
+   - P.S. 若服务器上不想拉取代码，可将 .github/workflows/deploy.yaml 中的拉取代码步骤 `git pull` 删除
+3. 服务器上的目录中的 `.env` 存放环境变量，内容同 `.env.example`
+4. GitHub 打开 Actions，手动触发部署即可
