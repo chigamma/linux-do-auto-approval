@@ -43,7 +43,7 @@ export async function handleApplication(_: ApplicationFormState, formData: FormD
 
     // 如果已登录且开启了自动审批，则自动通过申请
     const autoApprove = process.env.NEXT_PUBLIC_AUTO_APPROVE === "true";
-    const groupId = process.env.CARDHUB_GROUP_ID;
+    const groupId = process.env.LINUX_DO_GROUP_ID;
 
     // 获取允许自动审批的最低信任等级
     const minTrustLevel = process.env.NEXT_PUBLIC_MIN_TRUST_LEVEL ? parseInt(process.env.NEXT_PUBLIC_MIN_TRUST_LEVEL, 10) : 0;

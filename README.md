@@ -29,7 +29,12 @@ NEXTAUTH_URL="http://localhost:3000"
 
 # 自动审核和信任等级设置
 NEXT_PUBLIC_AUTO_APPROVE=true
-NEXT_PUBLIC_MIN_TRUST_LEVEL=2
+NEXT_PUBLIC_MIN_TRUST_LEVEL=0
+
+# 版主登录凭证
+LINUX_DO_COOKIE=your_linux_do_cookie
+LINUX_DO_CSRF_TOKEN=your_csrf_token
+LINUX_DO_GROUP_ID=your_group_id # 版主所在的组 ID
 ```
 
 ### 配置说明
@@ -67,6 +72,7 @@ NEXT_PUBLIC_MIN_TRUST_LEVEL=2
 - `NEXT_PUBLIC_MIN_TRUST_LEVEL`: 自动审核所需的最低信任等级（整数）
 - `LINUX_DO_COOKIE`: 版主登录凭证 Cookie（F12 后获取）
 - `LINUX_DO_CSRF_TOKEN`: 版主登录凭证 CSRF Token（同上）
+- `LINUX_DO_GROUP_ID`: 版主所在的组 ID（从请求 URL 获取）
 
 ## 功能流程
 
@@ -91,3 +97,7 @@ NEXT_PUBLIC_MIN_TRUST_LEVEL=2
    申请理由:
    用户填写的申请理由内容...
    ```
+
+## 部署
+
+直接 Vercel.com
