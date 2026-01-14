@@ -69,7 +69,7 @@ function ApplicationForm({
           className="w-full bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 px-3 py-2 text-sm font-mono text-zinc-900 dark:text-zinc-100 focus:outline-none focus:ring-1 focus:ring-zinc-500 placeholder:text-zinc-400 read-only:bg-zinc-50 dark:read-only:bg-zinc-900/50 read-only:cursor-not-allowed"
           placeholder="请输入您的 Linux DO 用户名"
         />
-        {isAuthenticated && <p className="text-xs text-zinc-500 dark:text-zinc-400">已通过 Linux.do 登录，用户 ID 已自动填充</p>}
+        {isAuthenticated && <p className="text-xs text-zinc-500 dark:text-zinc-400">已通过 LINUX DO CONNECT 登录，用户 ID 已自动填充</p>}
       </div>
 
       <div className="flex flex-col gap-2">
@@ -166,7 +166,7 @@ export default function CardHubApplicationPage() {
                 <div className="w-full p-4 border border-blue-200 dark:border-blue-900/50 bg-blue-50 dark:bg-blue-900/10 text-blue-800 dark:text-blue-200 text-sm">
                   <div className="flex items-center justify-between gap-4">
                     <div className="flex-1">
-                      <p className="font-medium mb-1">推荐通过 Linux.do 登录</p>
+                      <p className="font-medium mb-1">推荐通过 LINUX DO CONNECT 登录</p>
                       <p className="text-xs opacity-80">登录后将自动填充您的用户 ID</p>
                     </div>
                     <button
