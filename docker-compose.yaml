@@ -1,0 +1,17 @@
+services:
+  ldap:
+    image: node:25-alpine
+    container_name: ldap
+    restart: unless-stopped
+    working_dir: /app
+    command: node server.js
+    ports:
+      - "3002:3000"
+    volumes:
+      - ./standalone:/app
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - HOSTNAME=0.0.0.0
+      - PORT=3000
