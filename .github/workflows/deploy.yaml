@@ -24,6 +24,8 @@ jobs:
         with:
           version: 10
 
+      - run: echo "$(which pnpm)"
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
@@ -32,7 +34,8 @@ jobs:
 
       - name: Prepare deployment package
         run: |
-          cp -r .next/standalone deploy
+          mkdir -p deploy
+          cp -r .next/standalone/* deploy
           cp -r .next/static deploy/.next/static
           cp -r public deploy/public
 
@@ -56,5 +59,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script: |
             cd ${{ secrets.PATH }}
-            git pull
             docker compose restart
